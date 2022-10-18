@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir> <env-dir>
+set -e
+
+BUILD_DIR=$1
+ENV_DIR=$3
+
+VELORY_CLIENT_BUILD_BRANCH=$(<"$ENV_DIR/VELORY_CLIENT_BUILD_BRANCH")
+export VELORY_CLIENT_BUILD_BRANCH
+
+echo "-----> [heroku-buildpack-velory-client]"
+. "$BUILD_DIR/bin/link_velory_client"
