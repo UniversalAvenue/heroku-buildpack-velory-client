@@ -18,6 +18,8 @@ export_env_dir() {
   fi
 }
 
+cd $BUILD_DIR
+
 export_env_dir $ENV_DIR
 
-. "$BUILD_DIR/bin/link_velory_client"
+./bin/link_velory_client
