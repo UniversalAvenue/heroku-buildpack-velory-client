@@ -18,6 +18,6 @@ export_env_dir() {
   fi
 }
 
-echo "-----> [heroku-buildpack-velory-client]"
-export_env_dir
+export_env_dir $ENV_DIR
+
 . "$BUILD_DIR/bin/link_velory_client"
