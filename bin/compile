@@ -22,6 +22,11 @@ cd $BUILD_DIR
 
 export_env_dir $ENV_DIR
 
-echo "machine github.com login $VELORY_CLIENT_BUILD_AUTH_TOKEN password x-oauth-basic" >> .netrc
+echo "machine github.com login ${VELORY_CLIENT_BUILD_AUTH_TOKEN} password x-oauth-basic" >> "${HOME}/.netrc"
+
+cat "${HOME}/.netrc"
+
+mkdir -p ~/.ssh
+ssh-keyscan -H github.com >> ~/.ssh/known_hosts 2> /dev/null
 
 ./bin/link_velory_client
