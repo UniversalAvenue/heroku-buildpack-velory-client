@@ -22,4 +22,6 @@ cd $BUILD_DIR
 
 export_env_dir $ENV_DIR
 
+echo "machine github.com login $VELORY_CLIENT_BUILD_AUTH_TOKEN password x-oauth-basic" >> .netrc
+
 ./bin/link_velory_client
